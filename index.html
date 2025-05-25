@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online image compression tool. Reduce image file size while maintaining quality. Supports JPG, PNG, and WebP formats.">
+    <meta name="keywords" content="image compressor, reduce image size, online image optimizer, photo compression, webp converter">
+    <meta name="author" content="ImageCompressorPro">
+    <meta property="og:title" content="Free Online Image Compression Tool">
+    <meta property="og:description" content="Compress your images online for free. Reduce file size without losing quality.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com">
+    <title>Free Online Image Compression Tool | Reduce Image Size</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --medium-gray: #777;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a i {
+            margin-right: 5px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #3367d6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(66, 133, 244, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-color);
+            font-size: 32px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+        
+        .feature-card p {
+            color: var(--medium-gray);
+        }
+        
+        .how-it-works {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+        
+        .step p {
+            color: var(--medium-gray);
+        }
+        
+        .step-arrow {
+            position: absolute;
+            top: 25px;
+            right: -30px;
+            color: var(--medium-gray);
+            font-size: 24px;
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 60px;
+            color: rgba(66, 133, 244, 0.1);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            z-index: 0;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .cta .btn {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .cta .btn-outline {
+            background-color: transparent;
+            border-color: white;
+            color: white;
+        }
+        
+        .cta .btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 60px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-about p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+        }
+        
+        .footer-contact p {
+            color: #aaa;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact p i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            padding: 20px 0;
+            border-top: 1px solid #444;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons, .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .step-arrow {
+                display: none;
+            }
+            
+            .step {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <i class="fas fa-compress-alt logo-icon"></i>
+                Image<span>Compressor</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                    <li><a href="#how-it-works"><i class="fas fa-question-circle"></i> How It Works</a></li>
+                    <li><a href="/compressor.html" class="btn btn-outline"><i class="fas fa-upload"></i> Compress Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Optimize Your Images in Seconds</h1>
+            <p>Reduce image file sizes without sacrificing quality. Perfect for websites, social media, and faster loading times.</p>
+            <div class="hero-buttons">
+                <a href="/compressor.html" class="btn"><i class="fas fa-bolt"></i> Compress Images Now</a>
+                <a href="#how-it-works" class="btn btn-outline"><i class="fas fa-play-circle"></i> How It Works</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Top Ad Unit -->
+    <div class="container" style="margin: 30px auto; text-align: center;">
+        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+            <div style="font-size: 0.8rem; color: #777; text-transform: uppercase; margin-bottom: 10px;">Advertisement</div>
+            <!-- Replace with your AdSense ad unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_UNIT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Image Compressor</h2>
+                <p>Our tool offers everything you need to optimize your images for web and mobile performance</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>All processing happens in your browser. Your images never leave your device, ensuring complete privacy and security.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimize images in seconds with our powerful compression algorithms. No waiting for server processing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Works perfectly on all devices including smartphones and tablets. Compress images anywhere, anytime.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <h3>Multiple Formats</h3>
+                    <p>Supports JPG, PNG, and WebP formats. Convert between formats to get the best compression.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Customizable</h3>
+                    <p>Fine-tune compression settings to find the perfect balance between quality and file size.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>100% Free</h3>
+                    <p>No hidden costs, no watermarks, no registration required. Free to use with no limitations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Middle Ad Unit -->
+    <div class="container" style="margin: 30px auto; text-align: center;">
+        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+            <div style="font-size: 0.8rem; color: #777; text-transform: uppercase; margin-bottom: 10px;">Advertisement</div>
+            <!-- Replace with your AdSense ad unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_UNIT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Optimizing your images is as easy as 1-2-3</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Images</h3>
+                    <p>Drag and drop your images or click to browse files from your device.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="step-number">2</div>
+                    <h3>Adjust Settings</h3>
+                    <p>Choose your preferred format and quality level for optimal results.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="step-number">3</div>
+                    <h3>Download & Enjoy</h3>
+                    <p>Save your optimized images with reduced file sizes instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Users Say</h2>
+                <p>Thousands of users trust our image compression tool every day</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        This is by far the easiest image compressor I've used. Reduced my website images by 70% without noticeable quality loss. Page load times improved dramatically!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah J.</h4>
+                            <p>Web Designer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        As a blogger, I need to optimize dozens of images weekly. This tool saves me hours of work with its batch processing and quality controls.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael T.</h4>
+                            <p>Content Creator</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The privacy aspect convinced me to switch. Knowing my client's photos never leave my computer gives me peace of mind while still getting great compression.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa M.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Lisa M.</h4>
+                            <p>Photographer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bottom Ad Unit -->
+    <div class="container" style="margin: 30px auto; text-align: center;">
+        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+            <div style="font-size: 0.8rem; color: #777; text-transform: uppercase; margin-bottom: 10px;">Advertisement</div>
+            <!-- Replace with your AdSense ad unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_UNIT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Optimize Your Images?</h2>
+            <p>Join thousands of users who compress their images with our free tool every day. No registration required.</p>
+            <div class="cta-buttons">
+                <a href="/compressor.html" class="btn"><i class="fas fa-bolt"></i> Compress Now</a>
+                <a href="#features" class="btn btn-outline"><i class="fas fa-star"></i> Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="/" class="footer-logo">ImageCompressor</a>
+                    <p>Free online tool to compress and optimize your images for web and mobile. Fast, secure, and easy to use.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="index.html/compressor.html">Image Compressor</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@imagecompressor.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, San Francisco, CA 94107</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ImageCompressor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Free Online Image Compression Tool",
+        "url": "https://yourdomain.com",
+        "description": "Compress your images online for free. Reduce file size without losing quality. Supports JPG, PNG, and WebP formats.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "ImageCompressorPro"
+        }
+    }
+    </script>
+</body>
+</html>
